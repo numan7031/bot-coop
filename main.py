@@ -17,7 +17,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('HZhaPZ2OlTbKFxWvIcvPbdBfHP8aO6S7WCHeTCx4oHArhcfYLVmDBRN7PFkY1VlQDuJkswv+VjVfq/+GiZr/eZH6HXwsiVs407TiVIX/oqURw9klC9grqg49zzptrJ3+Iknq3CvkcIIPc06cijDjggdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('daef736e81f15e1f483debb7d4480727')
 
-@app.route("/")
+@app.route("/hello")
 def hello():
     return "Hello World!"
 
@@ -25,7 +25,7 @@ def hello():
 def about():
     return 'The about page'
 
-@app.route("/webhook", methods=['POST'])
+@app.route("/", methods=['POST'])
 def webhook():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
