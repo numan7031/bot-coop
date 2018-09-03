@@ -21,6 +21,10 @@ handler = WebhookHandler('daef736e81f15e1f483debb7d4480727')
 def hello():
     return "Hello World!"
 
+@app.route("/halo")
+def halo():
+    return "Halo World!"
+
 @app.route("/webhook", methods=['POST'])
 def webhook():
     # get X-Line-Signature header value
