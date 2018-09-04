@@ -10,9 +10,17 @@ chatbot = ChatBot(
     read_only=True, # อ่านอย่างเดียว
     storage_adapter='chatterbot.storage.SQLStorageAdapter', # กำหนดการจัดเก็บ ในที่นี้เลือก chatterbot.storage.SQLStorageAdapter เก็บเป็น Sqllite
     logic_adapters=[
-        "chatterbot.logic.MathematicalEvaluation",
-        "chatterbot.logic.TimeLogicAdapter",
-        "chatterbot.logic.BestMatch"
+        {
+            "chatterbot.logic.MathematicalEvaluation",
+            "chatterbot.logic.TimeLogicAdapter",
+            "chatterbot.logic.BestMatch"
+        },
+        {
+            'import_path': 'chatterbot.logic.LowConfidenceAdapter',
+            'threshold': 0.65,
+            'default_response': 'I am sorry, but I do not understand.'
+        }
+        
     ],
     database='Charlie.sqlite3' # ที่ตั้งฐานข้อมูล  
 )
