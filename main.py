@@ -16,7 +16,7 @@ chatbot = ChatBot(
         {
             'import_path': 'chatterbot.logic.LowConfidenceAdapter',
             'threshold': 0.65,
-            'default_response': 'I am sorry, but I do not understand.'
+            'default_response': 'Looks like your question is out of my scope. I am still learning, but I am now only able to answer questions about openlandscape products. '
         }
     ],
     database='Charlie.sqlite3' # ที่ตั้งฐานข้อมูล  
